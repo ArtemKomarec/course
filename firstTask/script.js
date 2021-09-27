@@ -44,14 +44,6 @@ retired = (age, userGender) => {
         return result;
     }
 }
-function print(calcAge, nextAge, userGender, pension){
-    alert("Вашео ФИО:" + surname + " " + name + " " + patronymic + "\n" +
-    "Ваш возраст в годах: " + age +"\n" +
-    "Ваш возраст в днях: " + calcAge + "\n" +
-    "Через 5 лет вам будет: " + nextAge + "\n" +
-    "ваш пол: " + userGender + "\n" +
-    "вы на пенсии? " + pension);
-}
 function isString(str){
     for (var i = 0; i < str.length; i++)
      if (/^[a-zA-Zа-яА-ЯЁё]+$/.test(str)){
@@ -67,10 +59,24 @@ function isNumber(str){
     }
      return true;
 }
-function addFcs(){
+function addUser(){
     let name;
     do{
-        name = prompt("Введите ваши данные");
+        name = prompt("Введите ваше Имя");
+    }while(isString(name))
+    return name;
+}
+function addSurname(){
+    let name;
+    do{
+        name = prompt("Введите вашу фамилию");
+    }while(isString(name))
+    return name;
+}
+function addPatronymic(){
+    let name;
+    do{
+        name = prompt("Введите ваше очество");
     }while(isString(name))
     return name;
 }
@@ -78,16 +84,38 @@ function inputAge(){
     let age;
     do{
          age = prompt("Ваш возраст");
-    }while(isNumber(age) || age < 5 || age > 80)
+    }while(isNumber(age))
     return age;
 }   
-confirm("Введите по очередности в следующих окнах ФИО по отдельности");
-let name = addFcs();
-let surname = addFcs();
-let patronymic = addFcs();
+let user = addUser();
+let surname = addSurname();
+let patronymic = addPatronymic();
 let age = inputAge();
-let calcAge = calculationAge(age);
-nextAge = nextAge(age);
+let dayAge = calculationAge(age);
+let calcAge = nextAge(age);
 let userGender = gender();
 let pension = retired(age, userGender);
-print(calcAge, nextAge, userGender, pension);
+for(let i = 0; i<6; i++)
+{
+    switch(i){
+        case 0:
+            document.getElementsByTagName("p")[i].innerHTML += user + " " + surname + " " + patronymic;
+        break;
+        case 1:
+            document.getElementsByTagName("p")[i].innerHTML += age; 
+        break;
+        case 2:
+            document.getElementsByTagName("p")[i].innerHTML += dayAge; 
+        break;
+        case 3:
+            document.getElementsByTagName("p")[i].innerHTML += calcAge; 
+        break;
+        case 4:
+            document.getElementsByTagName("p")[i].innerHTML += userGender; 
+        break;
+        case 5:
+            document.getElementsByTagName("p")[i].innerHTML += pension; 
+        break;
+    }
+
+}

@@ -9,8 +9,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open firstTask.html",
-            "file": "d:\\Course\\firstTask\\firstTask.html"
+            "name": "Open secondTask.html",
+            "file": "d:\\Course\\secondTask\\secondTask.html"
             
         }
     ]

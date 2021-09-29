@@ -1,92 +1,89 @@
-calculationAge  = (age) => {
-    return age *=365;
+calculationAge = (age) => {
+    return age *= 365;
 }
 let nextAge = (age) => {
     let num = Number(age);
-    return num +=5;
+    return num += 5;
 }
- gender = () => {
+gender = () => {
     let result = confirm("ваш пол женский?")
-    if(result){
+    if (result) {
         result = 'женский';
         return result;
     }
-    else{
+    else {
         result = 'мужской';
         return result;
     }
 }
 retired = (age, userGender) => {
     let result;
-    if(age>56)
-    {
-        switch(userGender){
-            case userGender: 
-            if(age < 66 && userGender == 'мужской')
-            {
-                result = 'нет';
-                return result;
-                break;
-            }
-            else{
+    if (age > 56) {
+        switch (userGender) {
+            case userGender:
+                if (age < 66 && userGender == 'мужской') {
+                    result = 'нет';
+                    return result;
+                    break;
+                }
+                else {
+                    result = 'да';
+                    return result;
+                    break;
+                }
+            default:
                 result = 'да';
                 return result;
                 break;
-            }
-            default:
-            result = 'да';
-            return result;
-            break;
         }
     }
-    else{
-        result = 'нет';
-        return result;
+    else {
+        return 'нет';
     }
 }
-function isString(str){
+function notValidString(str) {
     for (var i = 0; i < str.length; i++)
-     if (/^[a-zA-Zа-яА-ЯЁё]+$/.test(str)){
-        return false;
-     }
-     return true;
+        if (/^[a-zA-Zа-яА-ЯЁё]+$/.test(str)) {
+            return false;
+        }
+    return true;
 }
-function isNumber(str){
-    for (var i = 0; i < str.length; i++){
-        if (/^[0-9]+$/.test(str)){
-        return false;
-     }
+function isNumber(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (/^[0-9]+$/.test(str)) {
+            return false;
+        }
     }
-     return true;
+    return true;
 }
-function addUser(){
+function addUser() {
     let name;
-    do{
+    do {
         name = prompt("Введите ваше Имя");
-    }while(isString(name))
+    } while (notValidString(name))
     return name;
 }
-function addSurname(){
+function addSurname() {
     let name;
-    do{
+    do {
         name = prompt("Введите вашу фамилию");
-    }while(isString(name))
+    } while (notValidString(name))
     return name;
 }
-function addPatronymic(){
+function addPatronymic() {
     let name;
-    do{
+    do {
         name = prompt("Введите ваше очество");
-    }while(isString(name))
+    } while (notValidString(name))
     return name;
 }
-function inputAge(){
+function inputAge() {
     let age;
-    do{
-         age = prompt("Ваш возраст");
-    }while(isNumber(age))
+    do {
+        age = prompt("Ваш возраст");
+    } while (isNumber(age))
     return age;
-}   
+}
 let user = addUser();
 let surname = addSurname();
 let patronymic = addPatronymic();
@@ -95,27 +92,9 @@ let dayAge = calculationAge(age);
 let calcAge = nextAge(age);
 let userGender = gender();
 let pension = retired(age, userGender);
-for(let i = 0; i<6; i++)
-{
-    switch(i){
-        case 0:
-            document.getElementsByTagName("p")[i].innerHTML += user + " " + surname + " " + patronymic;
-        break;
-        case 1:
-            document.getElementsByTagName("p")[i].innerHTML += age; 
-        break;
-        case 2:
-            document.getElementsByTagName("p")[i].innerHTML += dayAge; 
-        break;
-        case 3:
-            document.getElementsByTagName("p")[i].innerHTML += calcAge; 
-        break;
-        case 4:
-            document.getElementsByTagName("p")[i].innerHTML += userGender; 
-        break;
-        case 5:
-            document.getElementsByTagName("p")[i].innerHTML += pension; 
-        break;
-    }
-
-}
+document.getElementsByTagName("p")[0].innerHTML += user + " " + surname + " " + patronymic;
+document.getElementsByTagName("p")[1].innerHTML += age;
+document.getElementsByTagName("p")[2].innerHTML += dayAge;
+document.getElementsByTagName("p")[3].innerHTML += calcAge;
+document.getElementsByTagName("p")[4].innerHTML += userGender;
+document.getElementsByTagName("p")[5].innerHTML += pension;

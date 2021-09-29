@@ -17,4 +17,4 @@ var array = [ 5, 7,
     1, 8
   ];
  sum = 0;
- alert(treeSum(array));
+ alert("array sum: " + treeSum(array));

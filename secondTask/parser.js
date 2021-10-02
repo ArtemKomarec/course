@@ -1,15 +1,12 @@
 function vowels() {
-    var text = prompt("Input text");
+    var text = prompt('input text');
     var number = 0;
-    var russianVowel = ['у', 'е', 'ы', 'а', 'о', 'э', 'я', 'и', 'ю'];
-    for (var i = 0; i < text.length; i++) {
-        for (var j = 0; j < russianVowel.length; j++) {
-            if (text[i] === russianVowel[j]) {
-                ++number;
-                break;
-            }
+    var russianVowel = 'уеыаоэяию';
+    for (let value of text) {
+        if(russianVowel.includes(value)) {
+            number++;
         }
     }
-    return alert(number);
+    return number;
 }
 console.log(vowels());

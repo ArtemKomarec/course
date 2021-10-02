@@ -1,4 +1,4 @@
-function vowelsForEach() {
+function forEachVowels() {
     var text = prompt('Input text');
     var number = 0;
     var russianVowel = 'уеыаоэяию';
@@ -10,23 +10,23 @@ function vowelsForEach() {
     return number;
 }
 
-console.log(vowelsForEach());
+console.log(forEachVowels());
 
-function filter() {
+function filterVowels() {
     var text = prompt('Input text');
     var russianVowel = 'уеыаоэяию';
     var number = [...text].filter(item => russianVowel.includes(item)).length;
     return number;
 }
 
-console.log(filter());
+console.log(filterVowels());
 
 
-function reduce() {
+function reduceVowels() {
     var text = prompt('Input text');
     var russianVowel = 'уеыаоэяию';
     var number = [...text].reduce((value, item) => russianVowel.includes(item) ? value + 1 : value, 0);
     return number;
 }
 
-console.log(reduce());
+console.log(reduceVowels());

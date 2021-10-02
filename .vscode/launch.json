@@ -5,12 +5,13 @@
     "version": "0.2.0",
     "console": "integratedTerminal",
     "configurations": [
+
         
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open secondTask.html",
-            "file": "d:\\Course\\secondTask\\secondTask.html"
+            "name": "Open thirdTask.html",
+            "file": "d:\\Course\\thirdTask\\thirdTask.html"
             
         }
     ]

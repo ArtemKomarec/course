@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="content.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="formwrapper">
+      <p>Task Name </p>
+      <input type="text" name="taskname" id="nameInput">
+      <p>Describe your task</p>
+      <textarea name="description" id="descriptionInput" cols="30" rows="10"></textarea>
+      <div>
+        <p>
+          Add importance
+        </p>
+        <label><input type="radio" class="radio" name="importance" value="normal" checked>Normal</label>
+        <label><input type="radio" class="radio" name="importance" value="mid">Middle</label>
+        <label><input type="radio" class="radio" name="importance" value="high">High</label>
+      </div>
+      <button onclick="addTask()" class="button">Add task to board</button>
+    </div>
+
+    <div class="tasks" id="tasks">
+      <div id="controlHighDiv"></div>
+      <div id="controlMidDiv"></div>
+      <div id="controlNormalDiv"></div>
+      <div class="task">
+        <div class="taskheading">Task name</div>
+        <div>task description</div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="planner.js"></script>
+
+</html>

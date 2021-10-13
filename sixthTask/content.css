@@ -1,0 +1,58 @@
+.page {
+    display: flex;
+  }
+  
+  .formwrapper {
+    flex: 1 0 30%;
+    padding: 10px;
+  }
+  
+  .tasks {
+    flex: 1 0 70%;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .formwrapper p+input,
+  .formwrapper p+textarea {
+    width: 100%;
+  }
+  
+  .button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 250px;
+    text-transform: uppercase;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .task {
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid grey;
+    max-width: 200px;
+    background-color: lightgrey;
+    min-height: 100px;
+    position: relative;
+    min-width: 100px;
+  }
+  
+  .taskheading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .mid-importance {
+    background-color: #FFE4B5;
+  }
+  
+  .high-importance {
+    background-color: #CD5C5C;
+  }
+  
+  label input {
+    width: 20px;
+  }

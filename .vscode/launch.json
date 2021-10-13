@@ -10,8 +10,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open fifthTask.html",
-            "file": "d:\\Course\\fifthTask\\table.html"
+            "name": "Open planner.html",
+            "file": "d:\\Course\\sixthTask\\planner.html"
             
         }
     ]

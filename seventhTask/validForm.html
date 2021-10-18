@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="content.css">
+</head>
+
+<body>
+    <form  id="form1">
+
+        <div class="form_element" id='name'>
+            <label for="siteName" class="labels">Название сайта:</label>
+            <input type="text" class="longText" name="siteName" id="siteName" >
+        </div>
+
+        <div class="form_element" id='url'>
+            <label for="siteUrl" class="labels">URL сайта:</label>
+            <input type="text" class="longText" name="siteUrl" id="siteUrl">
+        </div>
+
+        <div class="form_element" id='date'>
+            <label for="siteUrl" class="labels">Дата запуска сайта:</label>
+            <input type="date" class="longText" name="siteDate" id="siteDate" required>
+        </div>
+
+        <div class="form_element" id='customers'>
+            <label for="visitors" class="labels">Посетителей в сутки:</label>
+            <input type="text" name="visitors" id="visitors">
+        </div>
+
+        <div class="form_element" id='mail'>
+            <label for="email" class="labels">E-mail для связи:</label>
+            <input type="text" class="shortText" name="email" id="email">
+        </div>
+
+        <div class="form_element">
+            <label for="division" class="labels">Рубрика каталога:</label>
+            <select name="division" id="division" class="shortText">
+                <option value="1">здоровье</option>
+                <option value="2">домашний уют</option>
+                <option value="3">бытовая техника</option>
+            </select>
+        </div>
+
+        <div class="form_element" id='radioBtn'>
+            <span class="labels">Размещение:</span>
+            <input type="radio" name="payment" value="1" id="1">
+            <label for="1" class="radio_labels">бесплатное</label>
+            <input type="radio" name="payment" value="2" id="2">
+            <label for="2" class="radio_labels">платное</label>
+            <input type="radio" name="payment" value="3" id="3">
+            <label for="3" class="radio_labels">VIP</label>
+        </div>
+
+        <div class="form_element" id="tickReview">
+            <label for="votes" class="labels">Разрешить отзывы:</label>
+            <input type="checkbox" name="votes" id="votes">
+        </div>
+
+        <div id="checkDescription">
+            <label for="description" class="labels">Описание сайта:</label>
+        </div>
+        <div >
+            <textarea name="description" id="description" class="memo"></textarea>
+        </div>
+
+        <div class="form_element">
+            <input type="submit" value="Опубликовать:">
+        </div>
+
+    </form>
+    <script src="validForm.js"></script>
+</body>
+
+</html>

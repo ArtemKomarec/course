@@ -1,0 +1,36 @@
+form {
+    margin: 40px;
+    font-size: 20px;
+}
+
+.form_element {
+    display: flex;
+    padding: 1px;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.labels {
+    flex-basis: 200px;
+    box-sizing: border-box;
+}
+
+.longText {
+    flex-grow: 3;
+}
+
+.shortText {
+    flex-basis: 200px;
+    box-sizing: border-box;
+}
+
+.radio_labels {
+    padding-right: 7px;
+}
+
+.memo {
+    width: 100%;
+    height: 6em;
+    padding: 0px;
+    box-sizing: border-box;
+}

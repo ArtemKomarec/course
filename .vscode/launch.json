@@ -10,8 +10,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open validForm.html",
-            "file": "d:\\Course\\seventhTask\\validForm.html"
+            "name": "Open dragnDrop.html",
+            "file": "d:\\Course\\eighthTask\\dragnDrop.html"
             
         }
     ]

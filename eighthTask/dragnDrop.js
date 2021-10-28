@@ -1,35 +1,70 @@
-const field = document.getElementById('container');
-const container = Array.from(document.getElementById('container').children);
-container.forEach(function (elem, i) {
-    container[i].style.position = 'absolute';
-    container[i].style.top = Math.floor(Math.random() * 300) + 'px';
-    container[i].style.left = Math.floor(Math.random() * 300) + 'px';
-    container[i].style.width = '70px';
-    container[i].style.borderRadius = "90%";
-    container[i].onclick = function (e) {
-        document.body.appendChild(container[i]);
+const container = document.querySelector('#container');
+const images = container.querySelectorAll('img');
+let diffMouseMinusImgX = 0;
+let diffMouseMinusImgY = 0;
+let currElem;
+window.addEventListener('load', start);
 
-        this.onmousedown = function () {
-            e.target.style.zIndex = 1000;
-            let shiftX = e.clientX - this.getBoundingClientRect().left;
-            let shiftY = e.clientY - this.getBoundingClientRect().top;
-            moveAt(e.pageX, e.pageY);
-            function moveAt(pageX, pageY) {
-                e.target.style.left = pageX - shiftX + 'px';
-                e.target.style.top = pageY - shiftY + 'px';
-            }
-            function onMouseMove(e) {
-                moveAt(e.pageX, e.pageY);
-            }
-            document.addEventListener('mousemove', onMouseMove);
-            this.onmouseup = function () {
-                document.removeEventListener('mousemove', onMouseMove);
-                this.onmouseup = null;
-            };
-        }
-        this.ondragstart = function () {
-            return false;
-        };
+function start() {
+    for (let elem of images) {
+        const position = getElementPos(elem);
+        elem.style.left = position.left + 'px';
+        elem.style.top = position.top + 'px';
+        elem.style.width= '70px'
+        elem.addEventListener('mousedown', mousedown);
+        elem.addEventListener('mouseup', mouseup);
     }
-});
+    for (let elem of images) {
+        elem.style.position = 'absolute';
+    }
+}
+
+function getElementPos(elem) {
+    const bbox = elem.getBoundingClientRect();
+    return {
+      left: bbox.left + window.pageXOffset,
+      top: bbox.top + window.pageYOffset
+    };
+}
+
+function mousedown (EO) {
+    EO = EO || window.event;
+    EO.preventDefault();
+    currElem = EO.target;
+    const position = getElementPos(currElem);
+    diffMouseMinusImgX = EO.pageX - position.left;
+    diffMouseMinusImgY = EO.pageY - position.top;
+    container.appendChild(currElem);
+    currElem.style.cursor = 'pointer';
+    window.addEventListener('mousemove', mousemove);
+    
+    // Проверки:
+    // console.log('нажатие:' + EO);
+    // console.log('EO.target: ' + EO.target);
+    // console.log('EO.pageY: ' + EO.pageY + '\n' + 'EO.pageX: ' + EO.pageX + '\n' + 'diffMouseMinusImgY: ' + diffMouseMinusImgY);
+    // console.log('элемент: ' + currElem);
+}
+
+function mouseup (EO) {
+    EO = EO || window.event;
+    EO.preventDefault();
+    window.removeEventListener('mousemove', mousemove);
+    currElem.style.cursor = 'auto';
+
+    // Проверки:
+    // console.log('снятие:' + EO);
+    // console.log('курсор: ' + currElem.style.cursor);
+}
+
+function mousemove (EO) {
+    EO = EO || window.event;
+    EO.preventDefault();
+    currElem.style.left = (EO.pageX - diffMouseMinusImgX) + 'px';
+    currElem.style.top = (EO.pageY - diffMouseMinusImgY) + 'px';
+    
+    // Проверки:
+    // console.log('события движений:' + EO);
+    // console.log('курсор: ' + currElem.style.cursor);
+    // console.log(EO.pageY);
+}
 //document.addEventListener('mousemove', onMouseMove);

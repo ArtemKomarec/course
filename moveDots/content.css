@@ -1,0 +1,20 @@
+.container {
+    height: 150px;
+    width: 330px;
+    position: relative;
+    border: 1px solid black;
+    margin-top: 10px;
+    background-image: url(https://c.neh.tw/thumb/f/720/comdlpng6950427.jpg)
+  }
+  
+  .dot {
+    height: 28px;
+    width: 28px;
+    position: absolute;
+  }
+  
+  .red {
+    top: 0;
+    background: red;
+  }
+  

@@ -10,8 +10,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open clock.html",
-            "file": "d:\\Course\\clocksDom\\clock.html"
+            "name": "Open clockSvg.html",
+            "file": "d:\\Course\\clockSvg\\clockSvg.html"
             
         }
     ]

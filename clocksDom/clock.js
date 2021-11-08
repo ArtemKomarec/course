@@ -1,7 +1,3 @@
-const diameter = document.getElementById('getDiameter');
-
-
-
 class Clock {
     constructor() {
 
